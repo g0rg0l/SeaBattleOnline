@@ -27,7 +27,7 @@ public class Board {
         }
     }
 
-    public String boardToString() {
+    public String boardToString(boolean showShips) {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < boardSize + 1; i++) {
@@ -42,7 +42,7 @@ public class Board {
                 /* Заливка ячеек таблицы */
                 else {
                     BoardCoordinates currentPosition = new BoardCoordinates(i - 1, j - 1);
-                    String cellSprite = getStringCell(currentPosition);
+                    String cellSprite = getStringCell(currentPosition, showShips);
                     stringBuilder.append(getColorizedBackground(cellSprite, new BoardCoordinates(i, j)));
                 }
                 stringBuilder.append(ANSI_RESET_COLOR);
@@ -131,13 +131,23 @@ public class Board {
                 ANSI_WHITE_SQUARE + cellText;
     }
 
-    private String getStringCell(BoardCoordinates pos) {
-        if (isNotAttackedPosition(pos)) {
-            return EMPTY_CELL;
+    private String getStringCell(BoardCoordinates pos, boolean tips) {
+        if (tips) {
+            if (isNotAttackedPosition(pos)) {
+                if (isShipPosition(pos)) return ANSI_BLUE_COLOR + "@";
+                else return EMPTY_CELL;
+            }
+            else {
+                if (isShipPosition(pos)) return ANSI_RED_COLOR + ATTACKED_CELL;
+                else return ANSI_BLACK_COLOR + MISSED_CELL;
+            }
         }
         else {
-            if (isShipPosition(pos)) return ANSI_RED_COLOR + ATTACKED_CELL;
-            else return ANSI_BLACK_COLOR + MISSED_CELL;
+            if (isNotAttackedPosition(pos)) return EMPTY_CELL;
+            else {
+                if (isShipPosition(pos)) return ANSI_RED_COLOR + ATTACKED_CELL;
+                else return ANSI_GREEN_COLOR + MISSED_CELL;
+            }
         }
     }
 

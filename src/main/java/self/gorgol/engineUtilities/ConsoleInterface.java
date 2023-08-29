@@ -9,7 +9,9 @@ public class ConsoleInterface {
     public static final String ANSI_WHITE_SQUARE = "\u001B[47m";
     public static final String ANSI_RESET_COLOR = "\u001B[0m";
     public static final String ANSI_RED_COLOR = "\033[1;91m";
-    public static final String ANSI_BLACK_COLOR = "\033[1;32m";
+    public static final String ANSI_GREEN_COLOR = "\033[1;32m";
+    public static final String ANSI_BLUE_COLOR = "\033[1;34m";
+    public static final String ANSI_BLACK_COLOR = "\033[1;30m";
     public static final String[] HEADERS_LETTERS = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
     public static void messageIncorectInput() {

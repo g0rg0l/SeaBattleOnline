@@ -41,8 +41,8 @@ public class Engine {
     }
 
     private void printBoards() {
-        String firstStringBoard = this.first_board.boardToString();
-        String secondStringBoard = this.second_board.boardToString();
+        String firstStringBoard = this.first_board.boardToString(false);
+        String secondStringBoard = this.second_board.boardToString(false);
 
         String[] firstBoard = firstStringBoard.split("\n");
         String[] secondBoard = secondStringBoard.split("\n");
