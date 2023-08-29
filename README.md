@@ -32,6 +32,8 @@ The blue cells indicate the unattacked positions of the player's ships, and the 
 
 On the enemy board, misses are marked in green, and the places where they hit the positions of enemy ships are marked in red.
 
+![preview_1](https://github.com/g0rg0l/SeaBattle_JavaHelloWorld/blob/master/preview/preview_1.png)
+
 ![preview_2](https://github.com/g0rg0l/SeaBattle_JavaHelloWorld/blob/master/preview/preview_2.png)
 
 ![preview_3](https://github.com/g0rg0l/SeaBattle_JavaHelloWorld/blob/master/preview/preview_3.png)
